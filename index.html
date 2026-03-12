@@ -48,17 +48,47 @@
   .nutrition-icon { font-size: 22px; margin-bottom: 8px; }
   .nutrition-title { font-size: 13px; font-weight: 600; color: #e0d8c8; margin-bottom: 6px; }
   .nutrition-desc { font-size: 12px; color: #777; line-height: 1.6; font-family: 'Courier New', monospace; }
-  .meal-selector { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
-  .meal-day-btn { background: transparent; border: 1px solid #333; border-radius: 2px; padding: 8px 16px; transition: all 0.2s; }
-  .meal-day-btn .md-label { font-size: 11px; font-weight: 700; color: #888; font-family: 'Courier New', monospace; letter-spacing: 0.1em; }
-  .meal-day-btn .md-theme { font-size: 10px; color: #555; font-family: 'Courier New', monospace; margin-top: 2px; }
-  .meal-panel { display: none; background: #111; border: 1px solid #252525; border-radius: 2px; padding: 20px 24px; }
-  .meal-panel.active { display: block; }
-  .meal-panel-title { font-size: 14px; font-weight: 600; color: #e0d8c8; margin-bottom: 16px; }
-  .meal-row { display: flex; gap: 16px; padding: 11px 0; border-bottom: 1px solid #1a1a1a; align-items: flex-start; }
-  .meal-row:last-child { border-bottom: none; }
-  .meal-time { min-width: 110px; font-size: 11px; font-family: 'Courier New', monospace; letter-spacing: 0.1em; text-transform: uppercase; padding-top: 2px; }
-  .meal-food { font-size: 13px; color: #999; line-height: 1.6; }
+  .nut-section-label { font-size: 10px; letter-spacing: 0.2em; color: #555; font-family: 'Courier New', monospace; text-transform: uppercase; margin: 32px 0 6px; }
+  .nut-cat-btns { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+  .nut-cat-btn { background: transparent; border: 1px solid #333; border-radius: 2px; padding: 9px 18px; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-family: 'Courier New', monospace; color: #666; transition: all 0.2s; }
+  .nut-cat-btn.active { background: #7EB8A4; border-color: #7EB8A4; color: #0d0d0d; }
+  .nut-cat-pane { display: none; }
+  .nut-cat-pane.active { display: block; }
+  .recipe-btns { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .recipe-btn { background: transparent; border: 1px solid #333; border-radius: 2px; padding: 8px 14px; font-size: 11px; font-family: 'Courier New', monospace; color: #666; transition: all 0.2s; letter-spacing: 0.08em; }
+  .recipe-btn.active { border-color: #7EB8A4; color: #7EB8A4; background: #7EB8A411; }
+  .recipe-panel { display: none; }
+  .recipe-panel.active { display: block; }
+  .recipe-card { background: #111; border: 1px solid #252525; border-radius: 2px; overflow: hidden; }
+  .recipe-header { padding: 16px 20px 12px; border-bottom: 1px solid #1e1e1e; }
+  .recipe-title { font-size: 15px; color: #e0d8c8; font-weight: 500; margin-bottom: 8px; }
+  .recipe-macros { display: flex; gap: 8px; }
+  .macro-chip { font-size: 11px; font-family: 'Courier New', monospace; padding: 3px 10px; border-radius: 2px; }
+  .macro-kcal { background: #7EB8A422; color: #7EB8A4; border: 1px solid #7EB8A444; }
+  .macro-prot { background: #8EB8D822; color: #8EB8D8; border: 1px solid #8EB8D844; }
+  .recipe-prep { font-size: 11px; color: #555; font-family: 'Courier New', monospace; margin-top: 8px; font-style: italic; }
+  .recipe-body { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  @media(max-width:600px){ .recipe-body { grid-template-columns: 1fr; } }
+  .recipe-ingredients { padding: 16px 20px; border-right: 1px solid #1e1e1e; }
+  .recipe-steps { padding: 16px 20px; }
+  .recipe-col-title { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; font-family: 'Courier New', monospace; color: #444; margin-bottom: 10px; }
+  .ing-row { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; border-bottom: 1px solid #161616; font-size: 12px; }
+  .ing-row:last-child { border-bottom: none; }
+  .ing-name { color: #aaa; }
+  .ing-amount { color: #e0d8c8; font-family: 'Courier New', monospace; white-space: nowrap; }
+  .step-row { display: flex; gap: 10px; padding: 6px 0; border-bottom: 1px solid #161616; font-size: 12px; }
+  .step-row:last-child { border-bottom: none; }
+  .step-num { color: #7EB8A4; font-family: 'Courier New', monospace; font-size: 10px; min-width: 16px; padding-top: 1px; }
+  .step-text { color: #999; line-height: 1.5; }
+  .recipe-note { margin: 0 20px 16px; padding: 10px 14px; background: #0d0d0d; border-left: 2px solid #7EB8A4; font-size: 11px; color: #555; font-family: 'Courier New', monospace; line-height: 1.6; font-style: italic; }
+  .snack-table { width: 100%; border-collapse: collapse; }
+  .snack-table td { padding: 9px 12px; border-bottom: 1px solid #1a1a1a; font-size: 13px; }
+  .snack-table td:first-child { color: #ccc; }
+  .snack-table td:last-child { color: #7EB8A4; font-family: 'Courier New', monospace; font-size: 12px; text-align: right; }
+  .rhythm-row { display: flex; gap: 16px; padding: 10px 0; border-bottom: 1px solid #1a1a1a; align-items: baseline; }
+  .rhythm-row:last-child { border-bottom: none; }
+  .rhythm-time { min-width: 120px; font-size: 11px; font-family: 'Courier New', monospace; color: #7EB8A4; letter-spacing: 0.08em; }
+  .rhythm-desc { font-size: 13px; color: #999; }
   .neck-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
   .neck-item { background: #111; border: 1px solid #252525; border-left: 3px solid #E87C7C; border-radius: 2px; padding: 14px 18px; display: flex; gap: 14px; align-items: flex-start; }
   .neck-num { color: #E87C7C; font-family: 'Courier New', monospace; font-size: 12px; min-width: 24px; padding-top: 1px; }
@@ -144,20 +174,62 @@
 
   <!-- NUTRITION TAB -->
   <div id="tab-nutrition" class="tab-pane">
+
     <div class="section-label">Guidelines</div>
     <h2 class="section-h2">Nutrition Strategy</h2>
     <p class="section-sub">~2800 kcal maintenance · ~130-145g protein · No fish · No supplements</p>
     <div class="nutrition-grid">
       <div class="nutrition-card"><div class="nutrition-icon">🥩</div><div class="nutrition-title">Protein target</div><div class="nutrition-desc">~130-145g/day. Eggs, chicken, beef, turkey, Greek yogurt, cottage cheese.</div></div>
       <div class="nutrition-card"><div class="nutrition-icon">🍚</div><div class="nutrition-title">Carb timing</div><div class="nutrition-desc">Bigger carb meals around workouts. Reduce on full rest days.</div></div>
-      <div class="nutrition-card"><div class="nutrition-icon">🥑</div><div class="nutrition-title">Healthy fats</div><div class="nutrition-desc">Olive oil, avocado, nuts, eggs. Anti-inflammatory - good for cervical hernias.</div></div>
+      <div class="nutrition-card"><div class="nutrition-icon">🥑</div><div class="nutrition-title">Healthy fats</div><div class="nutrition-desc">Olive oil, nuts, eggs. Anti-inflammatory — good for cervical hernias.</div></div>
       <div class="nutrition-card"><div class="nutrition-icon">💧</div><div class="nutrition-title">Hydration</div><div class="nutrition-desc">2.5-3L water daily. More on run days.</div></div>
       <div class="nutrition-card"><div class="nutrition-icon">⚖️</div><div class="nutrition-title">Body recomposition</div><div class="nutrition-desc">Eat at maintenance (~2800 kcal). Goal is fat loss + muscle gain at same weight. Don't restrict aggressively.</div></div>
-      <div class="nutrition-card"><div class="nutrition-icon">⚡</div><div class="nutrition-title">Speed &amp; power</div><div class="nutrition-desc">Don't undereat carbs - speed and explosive power are carb-dependent. A steep deficit kills fast-twitch output.</div></div>
+      <div class="nutrition-card"><div class="nutrition-icon">⚡</div><div class="nutrition-title">Speed &amp; power</div><div class="nutrition-desc">Don't undereat carbs — speed and explosive power are carb-dependent. A steep deficit kills fast-twitch output.</div></div>
     </div>
-    <div class="section-label">Sample Days of Eating - mix &amp; match</div>
-    <div class="meal-selector" id="meal-selector"></div>
-    <div id="meal-panels"></div>
+
+    <div class="section-label" style="margin-top:28px">Daily rhythm</div>
+    <div class="phase-intro" style="margin-bottom:24px">
+      <div class="rhythm-row"><span class="rhythm-time">6:30</span><span class="rhythm-desc">Breakfast — grab from fridge, eat in the car</span></div>
+      <div class="rhythm-row"><span class="rhythm-time">12:00–13:00</span><span class="rhythm-desc">Lunch — prepped Sunday, reheat at work</span></div>
+      <div class="rhythm-row"><span class="rhythm-time">Pre-workout</span><span class="rhythm-desc">Snack — yogurt cup, smoothie, or fruit + nuts</span></div>
+      <div class="rhythm-row"><span class="rhythm-time">Post-workout</span><span class="rhythm-desc">Dinner — cook double portions, freeze backup</span></div>
+      <div class="rhythm-row"><span class="rhythm-time">Before bed</span><span class="rhythm-desc">Cottage cheese (~150g) — slow-digesting protein overnight</span></div>
+    </div>
+
+    <div class="nut-cat-btns">
+      <button class="nut-cat-btn active" onclick="switchNutCat('breakfast',this)">Breakfast</button>
+      <button class="nut-cat-btn" onclick="switchNutCat('lunch',this)">Lunch</button>
+      <button class="nut-cat-btn" onclick="switchNutCat('dinner',this)">Dinner</button>
+      <button class="nut-cat-btn" onclick="switchNutCat('snacks',this)">Snacks</button>
+    </div>
+
+    <div class="nut-cat-pane active" id="nutcat-breakfast">
+      <div class="recipe-btns" id="rbtn-breakfast"></div>
+      <div id="rpanel-breakfast"></div>
+    </div>
+    <div class="nut-cat-pane" id="nutcat-lunch">
+      <div class="recipe-btns" id="rbtn-lunch"></div>
+      <div id="rpanel-lunch"></div>
+    </div>
+    <div class="nut-cat-pane" id="nutcat-dinner">
+      <div class="recipe-btns" id="rbtn-dinner"></div>
+      <div id="rpanel-dinner"></div>
+    </div>
+    <div class="nut-cat-pane" id="nutcat-snacks">
+      <div class="phase-intro" style="margin-bottom:16px">Keep these stocked at home and at work. Snacks close the gap to ~2800 kcal and push protein over 130g. Beef and lamb dinners run lower on protein — snacks compensate.</div>
+      <div class="recipe-card">
+        <table class="snack-table">
+          <tr><td>Greek yogurt cup (150g)</td><td>~145 kcal · 14g protein</td></tr>
+          <tr><td>Cottage cheese (150g)</td><td>~130 kcal · 17g protein</td></tr>
+          <tr><td>Hard boiled eggs (2)</td><td>~155 kcal · 13g protein</td></tr>
+          <tr><td>Mixed nuts (30g)</td><td>~180 kcal · 5g protein</td></tr>
+          <tr><td>Beef jerky / biltong (30g)</td><td>~90 kcal · 16g protein</td></tr>
+          <tr><td>Rice cake + peanut butter (15g PB)</td><td>~110 kcal · 4g protein</td></tr>
+          <tr><td>Apple or banana</td><td>~80–100 kcal · 1g protein</td></tr>
+        </table>
+      </div>
+    </div>
+
   </div>
 
   <!-- INJURY PREVENTION TAB -->
@@ -383,46 +455,222 @@ const phases = {
   }
 };
 
-const mealDays = [
-  { label:"Day A", theme:"Classic High-Protein", color:"#7EB8A4", meals:[
-    {time:"Breakfast",food:"3 eggs + 2 egg whites scrambled, oats with banana & honey, black coffee"},
-    {time:"Lunch",food:"200g grilled chicken breast, white rice, large mixed salad with olive oil & lemon"},
-    {time:"Snack",food:"Full-fat Greek yogurt + handful of walnuts"},
-    {time:"Post-workout",food:"Cottage cheese with berries + a slice of whole grain bread"},
-    {time:"Dinner",food:"Lean beef steak, sweet potato, steamed broccoli with butter"}
-  ]},
-  { label:"Day B", theme:"Chicken & Egg Focus", color:"#E8A87C", meals:[
-    {time:"Breakfast",food:"4-egg omelette with cheese & spinach, 2 slices whole grain toast, coffee"},
-    {time:"Lunch",food:"Chicken wrap: tortilla, grilled chicken, avocado, tomato, Greek yogurt instead of mayo"},
-    {time:"Snack",food:"Hard-boiled eggs (2-3) + apple"},
-    {time:"Post-workout",food:"Full-fat milk smoothie: banana, peanut butter, oats - no powder needed"},
-    {time:"Dinner",food:"Ground beef stir-fry with bell peppers, onions, served over rice"}
-  ]},
-  { label:"Day C", theme:"Mediterranean Lean", color:"#8EB8D8", meals:[
-    {time:"Breakfast",food:"Full-fat Greek yogurt bowl: granola, mixed berries, drizzle of honey, side of boiled egg"},
-    {time:"Lunch",food:"Grilled chicken thighs, quinoa, roasted vegetables (zucchini, peppers, eggplant) with olive oil"},
-    {time:"Snack",food:"Cottage cheese + sliced cucumber & tomato, pinch of salt"},
-    {time:"Post-workout",food:"2 eggs on whole grain toast with avocado"},
-    {time:"Dinner",food:"Lamb mince with chickpeas, tomato sauce & herbs, served with flatbread"}
-  ]},
-  { label:"Day D", theme:"Red Meat & Hearty", color:"#C87878", meals:[
-    {time:"Breakfast",food:"Overnight oats: oats, full-fat milk, chia seeds, banana - prepped the night before"},
-    {time:"Lunch",food:"Beef mince bolognese with pasta, parmesan, side salad"},
-    {time:"Snack",food:"Handful of mixed nuts + full-fat milk glass"},
-    {time:"Post-workout",food:"Greek yogurt with honey + rice cake with peanut butter"},
-    {time:"Dinner",food:"Grilled ribeye or sirloin, roasted potatoes with rosemary, green beans"}
-  ]},
-  { label:"Day E", theme:"Poultry Variety", color:"#A878C8", meals:[
-    {time:"Breakfast",food:"Pancakes made with oats, eggs & banana (no flour), topped with Greek yogurt & berries"},
-    {time:"Lunch",food:"Turkey mince burger patty with whole grain bun, tomato, lettuce, mustard + sweet potato fries"},
-    {time:"Snack",food:"Cottage cheese with pineapple chunks"},
-    {time:"Post-workout",food:"Boiled eggs (3) + orange"},
-    {time:"Dinner",food:"Chicken thigh stew with white beans, tomatoes & spinach, crusty bread"}
-  ]}
-];
+const recipes = {
+  breakfast: [
+    { label:"Overnight Oats", kcal:516, prot:22,
+      prep:"Prep 1 jar the night before. Keeps 5 days in fridge — batch all 5 on Sunday.",
+      ingredients:[
+        ["Rolled oats","55 g"],["Full fat milk","120 ml"],["Full fat Greek yogurt","60 g"],
+        ["Peanut butter","12 g"],["Honey","6 g"],["Mixed nuts (walnuts, almonds)","15 g"]
+      ],
+      steps:[
+        "Combine oats, milk, yogurt and honey in a jar. Stir well.",
+        "Add peanut butter and stir — it blends fully overnight.",
+        "Top with mixed nuts. Seal and refrigerate overnight (min. 6h).",
+        "Morning: grab from fridge and go."
+      ],
+      note:"Batch 5 jars on Sunday to cover the full week."
+    },
+    { label:"Egg Muffins", kcal:267, prot:21,
+      prep:"Bake on Sunday. Eat cold or 60s in microwave. Keeps 5 days in fridge.",
+      ingredients:[
+        ["Eggs","2"],["Full fat milk","15 ml"],["Grated cheese (cheddar/gouda)","15 g"],
+        ["Fresh spinach","small handful"],["Bell pepper","¼ pepper, diced small"],
+        ["Salt & black pepper","to taste"],["Olive oil / butter (for greasing)","a little"]
+      ],
+      steps:[
+        "Preheat oven to 180°C. Grease 3 muffin tin cups.",
+        "Dice ¼ bell pepper small, chop spinach. Divide between the 3 cups.",
+        "Whisk 2 eggs with 15 ml milk, salt and pepper.",
+        "Pour over vegetables, filling cups ¾ full. Top with cheese.",
+        "Bake 18–20 min at 180°C until puffed and set. Cool before storing."
+      ],
+      note:"Scale to 6 or 9 muffins by multiplying all ingredients."
+    },
+    { label:"Yogurt Parfait", kcal:337, prot:18,
+      prep:"Assemble the night before. Takes 2 minutes.",
+      ingredients:[
+        ["Full fat Greek yogurt","150 g"],["Granola or oat clusters","25 g"],
+        ["Honey","6 g"],["Mixed nuts (walnuts, almonds)","10 g"]
+      ],
+      steps:[
+        "Spoon yogurt into a jar.",
+        "Add granola and nuts on top. Drizzle with honey.",
+        "Seal and refrigerate overnight.",
+        "Morning: grab from fridge and go."
+      ],
+      note:"Lightest on carbs — good on rest days or when planning a bigger pre-workout snack."
+    },
+    { label:"Fruit Smoothie", kcal:390, prot:19,
+      prep:"Works as breakfast OR pre-workout snack. Blend night before, refrigerate, shake before drinking.",
+      ingredients:[
+        ["Full fat Greek yogurt","100 g"],["Full fat milk","150 ml"],
+        ["Frozen mixed fruit (mango, peach, strawberry)","100 g"],
+        ["Rolled oats","20 g"],["Peanut butter","10 g"],["Honey","6 g"]
+      ],
+      steps:[
+        "Add all ingredients to blender — fruit straight from freezer, no thawing needed.",
+        "Blend 30–45 seconds until smooth.",
+        "Drink immediately or pour into sealed bottle and refrigerate overnight.",
+        "Shake well before drinking."
+      ],
+      note:"Frozen fruit blends smoother than fresh and keeps indefinitely. Oats add slow carbs."
+    }
+  ],
+  lunch: [
+    { label:"Beef & Rice Bowl", kcal:752, prot:35,
+      prep:"Week A. Prep 5 portions on Sunday. Tastes better the next day.",
+      ingredients:[
+        ["Ground beef (15% fat)","160 g"],["White rice (dry weight)","75 g"],
+        ["Tomato passata","100 ml"],["Bell pepper","½ pepper, diced"],
+        ["Onion","¼ onion, diced"],["Garlic","1 clove, minced"],
+        ["Smoked paprika","2 g"],["Soy sauce","8 ml"],
+        ["Olive oil","8 ml"],["Salt & pepper","to taste"]
+      ],
+      steps:[
+        "Cook rice according to packet. Set aside.",
+        "Heat oil in pan, cook ¼ onion and ½ bell pepper 5–6 min until soft.",
+        "Add garlic, stir 1 min. Add beef, brown breaking up, ~7 min.",
+        "Add passata, paprika, soy sauce, salt & pepper. Simmer 10 min.",
+        "Portion into containers. Cool before sealing."
+      ],
+      note:"Add splash of water and cover when reheating. Keeps 5 days."
+    },
+    { label:"Chicken Pasta", kcal:673, prot:58,
+      prep:"Week B. Prep 5 portions on Sunday. Make sauce generous — pasta absorbs liquid overnight.",
+      ingredients:[
+        ["Chicken breast","180 g"],["Penne pasta (dry weight)","80 g"],
+        ["Tomato passata","80 ml"],["Single cream","20 ml"],
+        ["Fresh spinach","1 handful"],["Onion","¼ onion, diced"],
+        ["Garlic","1 clove, minced"],["Italian herbs (dried)","2 g"],
+        ["Olive oil","8 ml"],["Parmesan, grated","10 g"],["Salt & pepper","to taste"]
+      ],
+      steps:[
+        "Cook pasta al dente. Drain, toss with a drizzle of oil. Set aside.",
+        "Dice chicken, cook in oil over medium-high heat 6–7 min. Remove.",
+        "Same pan: cook ¼ onion 3–4 min, add garlic 1 min, add passata + herbs. Simmer 8 min.",
+        "Add cream, stir. Add spinach until wilted. Return chicken.",
+        "Mix with pasta. Portion, top with parmesan. Cool before sealing."
+      ],
+      note:"Add splash of water and stir when reheating. Keeps 5 days."
+    }
+  ],
+  dinner: [
+    { label:"Beef Chili", kcal:961, prot:50,
+      prep:"One pot, 30 min. Serve with rice or bread. Freezes 3 months.",
+      ingredients:[
+        ["Ground beef","160 g"],["Kidney beans (tinned, drained)","150 g"],
+        ["Chopped tomatoes (tinned)","200 g"],["Tomato paste","15 g"],
+        ["Onion","½ onion, diced"],["Garlic","1–2 cloves, minced"],
+        ["Ground cumin","3 g"],["Smoked paprika","3 g"],["Chili flakes","1 g"],
+        ["Olive oil","8 ml"],["White rice (dry) or bread","75 g / 1–2 slices"],
+        ["Salt & pepper","to taste"]
+      ],
+      steps:[
+        "Heat oil in pot. Cook ½ onion 3 min. Add garlic, stir 1 min.",
+        "Add beef, brown breaking up, ~7 min.",
+        "Add cumin, paprika, chili flakes. Stir 1 min.",
+        "Add tomatoes, paste, beans. Season. Simmer uncovered 15–20 min.",
+        "Cook rice separately and serve alongside, or serve with bread."
+      ],
+      note:"Freeze chili only — cook fresh rice when eating."
+    },
+    { label:"Chicken Curry", kcal:895, prot:61,
+      prep:"One pan, 35 min. Serve over rice. Freezes 3 months.",
+      ingredients:[
+        ["Chicken breast","220 g"],["Coconut milk (tinned)","120 ml"],
+        ["Chopped tomatoes (tinned)","150 g"],["Onion","½ onion, diced"],
+        ["Garlic","1–2 cloves, minced"],["Fresh ginger","~1 cm piece, grated"],
+        ["Garam masala","4 g"],["Ground cumin","2 g"],["Turmeric","1 g"],
+        ["Olive oil","8 ml"],["White rice (dry weight)","75 g"],["Salt","to taste"]
+      ],
+      steps:[
+        "Dice chicken, seal in oil over medium-high 5 min. Remove.",
+        "Same pan: cook ½ onion 3–4 min. Add garlic + ginger 1 min. Add spices 1 min.",
+        "Add tomatoes and coconut milk. Bring to gentle simmer.",
+        "Return chicken. Simmer uncovered 15–20 min until thick. Season.",
+        "Cook rice separately and serve curry on top."
+      ],
+      note:"Turmeric and ginger are anti-inflammatory — good alongside cervical hernia management."
+    },
+    { label:"Lamb Stew", kcal:825, prot:39,
+      prep:"One pan, 25 min. Serve with flatbread or rice. Freezes 3 months.",
+      ingredients:[
+        ["Lamb mince","160 g"],["Chopped tomatoes (tinned)","200 g"],
+        ["Tomato paste","15 g"],["Onion","½ onion, diced"],
+        ["Garlic","1–2 cloves, minced"],["Ground cumin","3 g"],
+        ["Cinnamon","1 g"],["Dried oregano","2 g"],["Olive oil","6 ml"],
+        ["Flatbread or rice (dry)","1 flatbread / 75 g rice"],["Salt & pepper","to taste"]
+      ],
+      steps:[
+        "Heat oil in pan. Cook ½ onion 3 min. Add garlic, stir 1 min.",
+        "Add lamb, brown breaking up, ~6 min.",
+        "Add cumin, cinnamon, oregano. Stir 1 min.",
+        "Add tomatoes and paste. Season. Simmer 12–15 min until thick.",
+        "Serve with warm flatbread or rice."
+      ],
+      note:"The cinnamon is the difference-maker — don't skip it."
+    },
+    { label:"Pork Tray Bake", kcal:849, prot:38,
+      prep:"One tray, 10 min prep then oven. Freezes 2 months.",
+      ingredients:[
+        ["Pork mince or pork chops","180 g"],["Sweet potato","1 medium (~250 g), cubed"],
+        ["Bell pepper","1 pepper, sliced"],["Onion","½ onion, sliced"],
+        ["Garlic","2 cloves, whole"],["Smoked paprika","4 g"],
+        ["Dried thyme","2 g"],["Olive oil","12 ml"],["Salt & pepper","to taste"]
+      ],
+      steps:[
+        "Preheat oven to 200°C.",
+        "Toss sweet potato, bell pepper, ½ onion, garlic with oil, paprika, thyme, salt & pepper on a large tray.",
+        "If using mince: shape into rough patties and place on top.",
+        "Season pork, drizzle with a little extra oil.",
+        "Roast 30–35 min at 200°C until potato is tender and pork is cooked through."
+      ],
+      note:"Most hands-off dinner. Sweet potato covers your carbs — no side dish needed."
+    },
+    { label:"Turkey Bolognese", kcal:837, prot:60,
+      prep:"One pan, 30 min. Freeze sauce only — cook fresh pasta when eating. Freezes 3 months.",
+      ingredients:[
+        ["Turkey mince","200 g"],["Chopped tomatoes (tinned)","200 g"],
+        ["Tomato paste","15 g"],["Carrot","1 medium carrot, finely diced"],
+        ["Onion","½ onion, diced"],["Garlic","1–2 cloves, minced"],
+        ["Italian herbs (dried)","3 g"],["Olive oil","8 ml"],
+        ["Pasta or rice (dry weight)","75 g"],["Parmesan, grated","10 g"],
+        ["Salt & pepper","to taste"]
+      ],
+      steps:[
+        "Cook ½ onion and 1 finely diced carrot in oil 5 min until soft.",
+        "Add garlic 1 min. Add turkey, brown breaking up, ~7 min.",
+        "Add tomatoes, paste, herbs. Season. Simmer low heat 20 min minimum.",
+        "Cook pasta separately. Serve sauce on top. Finish with parmesan."
+      ],
+      note:"Turkey mince — highest protein per calorie of all six dinners. Carrot cuts the acidity."
+    },
+    { label:"Beef Stew", kcal:868, prot:66,
+      prep:"One pot — 10 min prep, then leave it alone for an hour. Freezes 3 months.",
+      ingredients:[
+        ["Stewing beef, cubed","200 g"],["Potatoes","2 medium (~180 g), cubed"],
+        ["Carrot","1 large carrot, sliced"],["Onion","½ onion, diced"],
+        ["Garlic","1–2 cloves, minced"],["Tomato paste","15 g"],
+        ["Beef stock","300 ml"],["Dried thyme","2 g"],["Bay leaf","1"],
+        ["Olive oil","8 ml"],["Crusty bread","1–2 slices (~70 g)"],
+        ["Salt & pepper","to taste"]
+      ],
+      steps:[
+        "Season beef, brown in batches in hot oil 3–4 min each. Remove.",
+        "Cook ½ onion 3 min. Add garlic and paste, stir 1 min.",
+        "Return beef. Add potatoes, carrot, stock, thyme, bay leaf. Bring to boil.",
+        "Cover, simmer low 60–75 min until beef is tender. Stir occasionally.",
+        "Remove bay leaf. Serve with crusty bread."
+      ],
+      note:"Highest-protein dinner of the six. Flavour improves significantly the next day."
+    }
+  ]
+};
 
 let activePhase = 1;
-let activeMealDay = 0;
+let activeNutCat = 'breakfast';
+const activeRecipe = { breakfast: 0, lunch: 0, dinner: 0 };
 
 function switchTab(tab, btn) {
   document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
@@ -495,52 +743,81 @@ function toggleDay(btn) {
   arrow.classList.toggle('open');
 }
 
-function renderMeals() {
-  const selector = document.getElementById('meal-selector');
-  const panels = document.getElementById('meal-panels');
-  selector.innerHTML = ''; panels.innerHTML = '';
-  mealDays.forEach((d, i) => {
-    const btn = document.createElement('button');
-    btn.className = 'meal-day-btn';
-    btn.onclick = () => switchMealDay(i);
-    btn.id = 'mdbtn-' + i;
-    btn.innerHTML = `<div class="md-label">${d.label}</div><div class="md-theme">${d.theme}</div>`;
-    selector.appendChild(btn);
-    const panel = document.createElement('div');
-    panel.className = 'meal-panel';
-    panel.id = 'meal-panel-' + i;
-    panel.style.borderLeftColor = d.color;
-    const rows = d.meals.map(m => `
-      <div class="meal-row">
-        <div class="meal-time" style="color:${d.color}">${m.time}</div>
-        <div class="meal-food">${m.food}</div>
-      </div>`).join('');
-    panel.innerHTML = `<div class="meal-panel-title">${d.label} &mdash; ${d.theme}</div>${rows}`;
-    panels.appendChild(panel);
-  });
-  switchMealDay(0);
+function switchNutCat(cat, btn) {
+  activeNutCat = cat;
+  document.querySelectorAll('.nut-cat-pane').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nut-cat-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('nutcat-' + cat).classList.add('active');
+  btn.classList.add('active');
 }
 
-function switchMealDay(i) {
-  activeMealDay = i;
-  document.querySelectorAll('.meal-panel').forEach(p => p.classList.remove('active'));
-  document.getElementById('meal-panel-' + i).classList.add('active');
-  mealDays.forEach((d, j) => {
-    const btn = document.getElementById('mdbtn-' + j);
-    if (j === i) {
-      btn.style.background = d.color; btn.style.borderColor = d.color;
-      btn.querySelector('.md-label').style.color = '#0d0d0d';
-      btn.querySelector('.md-theme').style.color = '#0d0d0d';
-    } else {
-      btn.style.background = 'transparent'; btn.style.borderColor = '#333';
-      btn.querySelector('.md-label').style.color = '#888';
-      btn.querySelector('.md-theme').style.color = '#555';
-    }
+function buildRecipeCard(r) {
+  const ings = r.ingredients.map(([name, amt]) =>
+    `<div class="ing-row"><span class="ing-name">${name}</span><span class="ing-amount">${amt}</span></div>`
+  ).join('');
+  const steps = r.steps.map((s, i) =>
+    `<div class="step-row"><span class="step-num">${i+1}</span><span class="step-text">${s}</span></div>`
+  ).join('');
+  return `
+    <div class="recipe-card">
+      <div class="recipe-header">
+        <div class="recipe-title">${r.label}</div>
+        <div class="recipe-macros">
+          <span class="macro-chip macro-kcal">${r.kcal} kcal</span>
+          <span class="macro-chip macro-prot">${r.prot}g protein</span>
+        </div>
+        <div class="recipe-prep">${r.prep}</div>
+      </div>
+      <div class="recipe-body">
+        <div class="recipe-ingredients">
+          <div class="recipe-col-title">Ingredients · per serving</div>
+          ${ings}
+        </div>
+        <div class="recipe-steps">
+          <div class="recipe-col-title">Method</div>
+          ${steps}
+        </div>
+      </div>
+      ${r.note ? `<div class="recipe-note">${r.note}</div>` : ''}
+    </div>`;
+}
+
+function renderRecipeCat(cat) {
+  const list = recipes[cat];
+  if (!list) return;
+  const btnContainer = document.getElementById('rbtn-' + cat);
+  const panelContainer = document.getElementById('rpanel-' + cat);
+  btnContainer.innerHTML = '';
+  panelContainer.innerHTML = '';
+  list.forEach((r, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'recipe-btn' + (i === 0 ? ' active' : '');
+    btn.textContent = r.label;
+    btn.onclick = () => switchRecipe(cat, i);
+    btn.id = `rbtn-${cat}-${i}`;
+    btnContainer.appendChild(btn);
+    const panel = document.createElement('div');
+    panel.className = 'recipe-panel' + (i === 0 ? ' active' : '');
+    panel.id = `rpanel-${cat}-${i}`;
+    panel.innerHTML = buildRecipeCard(r);
+    panelContainer.appendChild(panel);
   });
+}
+
+function switchRecipe(cat, i) {
+  activeRecipe[cat] = i;
+  document.querySelectorAll(`#rpanel-${cat} .recipe-panel`).forEach(p => p.classList.remove('active'));
+  document.querySelectorAll(`#rbtn-${cat} .recipe-btn`).forEach(b => b.classList.remove('active'));
+  const panel = document.getElementById(`rpanel-${cat}-${i}`);
+  const btn = document.getElementById(`rbtn-${cat}-${i}`);
+  if (panel) panel.classList.add('active');
+  if (btn) btn.classList.add('active');
 }
 
 renderPhase();
-renderMeals();
+renderRecipeCat('breakfast');
+renderRecipeCat('lunch');
+renderRecipeCat('dinner');
 </script>
 </body>
 </html>
